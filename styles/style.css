@@ -1,0 +1,15 @@
+.container {
+  width: 800px;
+  height: 800px;
+  border: 1px solid black;
+}
+.container > div {
+  background-color: white;
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+}
+
+.hovered {
+  background-color: black;
+}
