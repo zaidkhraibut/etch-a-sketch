@@ -1,10 +1,19 @@
-.container {
+html {
+  font-family: 'Nunito', sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+.grid {
   width: 400px;
   height: 400px;
   border: 1px solid black;
   margin: auto;
+  border-radius: 2px;
 }
-.container > div {
+.grid > div {
   background-color: white;
   display: inline-block;
   height: 10px;
@@ -15,10 +24,23 @@ div .hovered {
   background-color: #666;
 }
 
-#everything {
-  width: 400px;
-  height: 500px;
+div .cleared {
+  background-color: white;
+}
+
+#container {
+  width: 402px;
+  height: 525px;
   margin: auto;
+}
+
+.left {
+  float: left;
+  margin-top: 10px;
+}
+
+#rainbow {
+  margin-left: 5px;
 }
 
 #clear {
@@ -28,4 +50,28 @@ div .hovered {
 
 div .cleared {
   background-color: white;
+}
+
+#footer {
+  border-top: 1px solid #e4e4e4;
+  background-color: #f2f2f2;
+  color: #666669;
+  width: 100%;
+  height: 30px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 10px;
+  min-width: 900px;
+}
+
+li {
+  list-style: none;
+  float: right;
+  margin-right: 20px;
+}
+
+div .blue {
+  background-color: blue;
 }
