@@ -7,6 +7,20 @@ function createDivs() {
    }
 };
 
+var j = 0
+
+function changeDivs() {
+  $('.grid').empty();
+  var userInput = parseInt(prompt("How many square per side?"));
+  var boxSize = 400/userInput;
+  while (j < userInput * userInput) {
+    $(".grid").append('<div></div>');
+    j++;
+  }
+  $('.grid > div').css({'height': boxSize, 'width': boxSize});
+  j = 0;
+};
+
 function greyGrid() {
   $('.grid').on('mouseover', 'div', function() {
     $(this).removeClass('blue');
@@ -15,7 +29,7 @@ function greyGrid() {
 };
 
 function getRandomClass() {
-    var classArray = ['red', 'blue', 'green', 'orange', 'purple', 'pink'];
+    var classArray = ['red', 'blue', 'green', 'orange', 'purple', 'pink', 'violet', 'lightblue', 'lightgreen'];
     var rand = Math.floor(Math.random() * classArray.length);
     return classArray[rand];
     console.log(classArray[rand]);
@@ -50,6 +64,9 @@ $(document).ready(function() {
     rainbowGrid();
   });
 
+  $('#change').on('click', function() {
+    changeDivs();
+  });
 });
 
 // $('.container > div').toggleClass('hovered'); Use this to invert selection

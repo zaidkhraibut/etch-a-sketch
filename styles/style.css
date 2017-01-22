@@ -12,12 +12,14 @@ h1 {
   border: 1px solid black;
   margin: auto;
   border-radius: 2px;
+  overflow: hidden;
 }
 .grid > div {
   background-color: white;
   display: inline-block;
   height: 10px;
   width: 10px;
+  overflow: hidden;
 }
 
 div .hovered {
@@ -39,13 +41,17 @@ div .cleared {
   margin-top: 10px;
 }
 
+.right {
+  float: right;
+  margin-top: 10px;
+}
+
 #rainbow {
   margin-left: 5px;
 }
 
-#clear {
-  float: right;
-  margin-top: 10px;
+#change {
+  margin-right: 5px;
 }
 
 div .cleared {
@@ -84,4 +90,10 @@ div .blue {
   background-color: purple;
 }div .pink {
   background-color: pink;
+}div .violet {
+  background-color: violet;
+}div .lightblue {
+  background-color: lightblue;
+}div .lightgreen {
+  background-color: lightgreen;
 }
