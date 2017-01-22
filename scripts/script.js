@@ -12,6 +12,11 @@ var j = 0
 function changeDivs() {
   $('.grid').empty();
   var userInput = parseInt(prompt("How many square per side?"));
+
+  while (userInput < 1 || isNaN(parseFloat(userInput))) {
+  userInput = parseInt(prompt("Please input a number above 0."));
+  }
+  console.log(userInput);
   var boxSize = 400/userInput;
   while (j < userInput * userInput) {
     $(".grid").append('<div></div>');
@@ -25,11 +30,12 @@ function greyGrid() {
   $('.grid').on('mouseover', 'div', function() {
     $(this).removeClass();
     $(this).addClass('hovered');
+    $(this).css({'opacity': '0.9'});
   });
-  $('.grid').on('mouseleave', 'div', function() {
-    $(this).animate({'opacity': '0.5'}, 200);
-    $(this).animate({'opacity': '0.9'}, 200)
-  });
+//  $('.grid').on('mouseleave', 'div', function() {
+//    $(this).animate({'opacity': '0.5'}, 500);
+//    $(this).animate({'opacity': '0.9'}, 500);
+//  });
 };
 
 
@@ -45,9 +51,6 @@ function rainbowGrid() {
     $(this).removeClass();
     $(this).addClass(getRandomClass);
   });
-  $('.grid').on('mouseleave', 'div', function() {
-    $(this).css('opacity', 0.8)
-  });
 };
 
 function clear() {
@@ -57,6 +60,8 @@ function clear() {
 $(document).ready(function() {
   createDivs();
   greyGrid();
+
+ //$('#optionsDiv').fadeIn();
 
   $('#clear').on('click', function() {
     clear();
