@@ -11,12 +11,18 @@ var j = 0
 
 function changeDivs() {
   $('.grid').empty();
-  var userInput = parseInt(prompt("How many square per side?"));
+  var userInput = parseInt(prompt("How many squares per side? Feel free to play around or press Enter for default."));
 
-  while (userInput < 1 || isNaN(parseFloat(userInput))) {
-  userInput = parseInt(prompt("Please input a number above 0."));
-  }
+  if (userInput < 1 || isNaN(parseFloat(userInput))) {
+    userInput = 40;
+}
+
+  while(userInput > 100) {
+  userInput = parseInt(prompt("That numbers a little high. Try something under 100."));
+}
+
   console.log(userInput);
+
   var boxSize = 400/userInput;
   while (j < userInput * userInput) {
     $(".grid").append('<div></div>');
