@@ -24,7 +24,7 @@ function changeDivs() {
   console.log(userInput);
 
   var boxSize = 400/userInput;
-  while (j < userInput * userInput) {
+  while (j < (userInput * userInput * 1.2)) {
     $(".grid").append('<div></div>');
     j++;
   }
@@ -74,12 +74,10 @@ $(document).ready(function() {
   });
 
   $('#default').on('click', function() {
-    clear();
     greyGrid();
   });
 
   $('#rainbow').on('click', function() {
-    clear();
     rainbowGrid();
   });
 
