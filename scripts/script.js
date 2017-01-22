@@ -38,12 +38,21 @@ function greyGrid() {
     $(this).addClass('hovered');
     $(this).css({'opacity': '0.9'});
   });
-//  $('.grid').on('mouseleave', 'div', function() {
-//    $(this).animate({'opacity': '0.5'}, 500);
-//    $(this).animate({'opacity': '0.9'}, 500);
-//  });
 };
 
+function lightTrail() {
+  $('.grid').on('mouseleave', 'div', function() {
+    $(this).animate({'opacity': '0.5'}, 500);
+    $(this).animate({'opacity': '1'}, 500);
+  });
+};
+
+function lightTrailOff() {
+  $('.grid').on('mouseleave', 'div', function() {
+    $(this).stop(true, true);
+    $(this).css({'opacity': '1'});
+  });
+};
 
 function getRandomClass() {
     var classArray = ['red', 'blue', 'green', 'orange', 'purple', 'pink', 'violet', 'lightblue', 'lightgreen'];
@@ -69,20 +78,20 @@ $(document).ready(function() {
 
  //$('#optionsDiv').fadeIn();
 
-  $('#clear').on('click', function() {
-    clear();
-  });
+  $('#clear').on('click', clear);
 
-  $('#default').on('click', function() {
-    greyGrid();
-  });
+  $('#default').on('click', greyGrid);
 
-  $('#rainbow').on('click', function() {
-    rainbowGrid();
-  });
+  $('#rainbow').on('click', rainbowGrid);
 
-  $('#change').on('click', function() {
-    changeDivs();
+  $('#change').on('click', changeDivs);
+
+  $(".trailbut").on('change', 'input', function() {
+    if(this.checked) {
+        lightTrail();
+    } else {
+        lightTrailOff();
+    }
   });
 });
 

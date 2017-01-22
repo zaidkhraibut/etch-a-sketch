@@ -56,6 +56,15 @@ div .cleared {
   margin-right: 5px;
 }
 
+#trail {
+  font-size: 12px;
+  margin-left: 40px;
+}
+
+.trailbut {
+  margin-top: 13px;
+}
+
 #footer {
   border-top: 1px solid #e4e4e4;
   background-color: #f2f2f2;
