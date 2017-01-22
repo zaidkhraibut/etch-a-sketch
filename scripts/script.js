@@ -14,21 +14,27 @@ function greyGrid() {
   });
 };
 
+function getRandomClass() {
+    var classArray = ['red', 'blue', 'green', 'orange', 'purple', 'pink'];
+    var rand = Math.floor(Math.random() * classArray.length);
+    return classArray[rand];
+    console.log(classArray[rand]);
+}
+
 function rainbowGrid() {
   $('.grid').on('mouseover', 'div', function() {
-    $(this).removeClass('hovered');
-    $(this).addClass('blue');
+    $(this).removeClass();
+    $(this).addClass(getRandomClass);
   });
 };
 
 function clear() {
-  $('.grid>div').removeClass('hovered');
-  $('.grid>div').removeClass('blue');
+  $('.grid>div').removeClass();
 };
 
 $(document).ready(function() {
   createDivs();
-  rainbowGrid();
+  greyGrid();
 
   $('#clear').on('click', function() {
     clear();
