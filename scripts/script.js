@@ -23,10 +23,15 @@ function changeDivs() {
 
 function greyGrid() {
   $('.grid').on('mouseover', 'div', function() {
-    $(this).removeClass('blue');
+    $(this).removeClass();
     $(this).addClass('hovered');
   });
+  $('.grid').on('mouseleave', 'div', function() {
+    $(this).animate({'opacity': '0.5'}, 200);
+    $(this).animate({'opacity': '0.9'}, 200)
+  });
 };
+
 
 function getRandomClass() {
     var classArray = ['red', 'blue', 'green', 'orange', 'purple', 'pink', 'violet', 'lightblue', 'lightgreen'];
@@ -39,6 +44,9 @@ function rainbowGrid() {
   $('.grid').on('mouseover', 'div', function() {
     $(this).removeClass();
     $(this).addClass(getRandomClass);
+  });
+  $('.grid').on('mouseleave', 'div', function() {
+    $(this).css('opacity', 0.8)
   });
 };
 
